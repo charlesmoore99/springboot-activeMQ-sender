@@ -1,6 +1,7 @@
 package demo;
 
 import org.apache.activemq.command.ActiveMQQueue;
+import org.apache.activemq.command.ActiveMQTopic;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -14,11 +15,11 @@ public class Application {
 	public static void main(String[] args) {
 		System.out.println("starting!");
 		SpringApplication.run(Application.class, args);
-		System.out.println("done!");
+		System.out.println("SENDING!");
 	}
 
     @Bean
-    public  ActiveMQQueue queue() {
-        return new ActiveMQQueue("theQueue");
+    public  ActiveMQTopic topic() {
+        return new ActiveMQTopic("theTopic");
     }
 }
